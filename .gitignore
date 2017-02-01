@@ -1,3 +1,9 @@
+#stinger and kvrt
+stinger32.exe
+stinger.opt
+kvrt.exe
+test/
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

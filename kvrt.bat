@@ -1,0 +1,2 @@
+bin\wget.exe
+pause
