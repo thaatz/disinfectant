@@ -1,7 +1,9 @@
 #stinger and kvrt
 stinger32.exe
 stinger.opt
+stinger.txt
 kvrt.exe
+kvrt.txt
 test/
 
 # Windows image file caches
