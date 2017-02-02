@@ -16,7 +16,7 @@ if "%stingerbuild%"=="" (
 ) else echo  บ 1. Stinger [%stingerbuild%]                                               บ
 if "%kvrtbuild%"=="" (
 	echo  บ 2. KVRT [none]                                                            บ
-) else echo  บ 2. KVRT [%kvrtbuild%]                                                 บ
+) else echo  บ 2. KVRT [%kvrtbuild%]                                                  บ
 echo  ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
 set /p exs=Make selection: 
 if /i "%exs%"=="1" goto :updstinger
@@ -31,7 +31,7 @@ echo.
 bin\wget.exe -N http://downloadcenter.mcafee.com/products/mcafee-avert/stinger/stinger32.exe
 echo %date%>stinger.txt
 :: wait for 2 seconds so we can see the results
-pause
+REM pause
 ping localhost -n 3 >nul
 goto :EOF
 
