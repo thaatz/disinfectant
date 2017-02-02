@@ -28,9 +28,9 @@ goto :main
 echo.
 :: -N If the local file is newer, the remote file will not be re-fetched http://www.editcorp.com/personal/lars_appel/wget/wget_5.html#SEC23
 bin\wget.exe -N http://downloadcenter.mcafee.com/products/mcafee-avert/stinger/stinger32.exe
-<<<<<<< HEAD
 echo %date%>stinger.txt
 :: wait for 2 seconds so we can see the results
+pause
 ping localhost -n 3 >nul
 goto :EOF
 
