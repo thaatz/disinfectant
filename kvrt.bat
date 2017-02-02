@@ -1,4 +1,5 @@
 @echo off
+pushd %~dp0 2>NUL
 set kvrtlog="%userprofile%\desktop\kvrt\"
 if not exist %kvrtlog% md %kvrtlog%
 REM http://support.kaspersky.com/8537
