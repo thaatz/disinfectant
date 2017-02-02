@@ -42,7 +42,3 @@ echo %date%>kvrt.txt
 :: wait for 2 seconds so we can see the results
 ping localhost -n 3 >nul
 goto :EOF
-=======
-echo latest stinger as of %date% > stinger.txt
-pause
->>>>>>> origin/master
