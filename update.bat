@@ -1,4 +1,5 @@
 @echo off
+:: http://stackoverflow.com/questions/3068929/how-to-read-file-contents-into-a-variable-in-a-batch-file
 set /p stingerbuild=<stinger.txt
 set /p kvrtbuild=<kvrt.txt
 title Disinfectant Updater
