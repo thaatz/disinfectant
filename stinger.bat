@@ -13,5 +13,7 @@ REM --rptall      : log all files
 REM --rootkit     : undocumented, but this enables scanning for rootkits
 REM --scanpath=   : scan specified directories (--scanpath=c:\)
 REM --epo         : run without the real protect component https://www.mcafee.com/us/downloads/free-tools/how-to-use-stinger.aspx
-stinger32.exe --go --silent --repair --reportpath=%stingerlog% --rootkit --epo
+REM if you need to reinstall mcafee real protect, get it from https://www.bleepingcomputer.com/download/mcafee-real-protect/
+REM if you change the command line arguments, you'll need to delete stinger.opt to reset the settings
+stinger32.exe --go --silent --program --repair --reportpath=%stingerlog% --rootkit --epo
 REM --scanpath=c:\ 
