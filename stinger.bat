@@ -13,5 +13,5 @@ REM --rptall      : log all files
 REM --rootkit     : undocumented, but this enables scanning for rootkits
 REM --scanpath=   : scan specified directories (--scanpath=c:\)
 REM --epo         : run without the real protect component https://www.mcafee.com/us/downloads/free-tools/how-to-use-stinger.aspx
-stinger32.exe --go --silent --program --repair --reportpath=%stingerlog% --rootkit --epo
+stinger32.exe --go --silent --repair --reportpath=%stingerlog% --rootkit --epo
 REM --scanpath=c:\ 
