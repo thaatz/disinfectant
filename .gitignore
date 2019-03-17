@@ -7,6 +7,10 @@ kvrt.exe
 kvrt.txt
 test/
 
+#Emsisoft Emergency Kit and the whitelist file
+EmsisoftEmergencyKit
+whitelist.txt
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
