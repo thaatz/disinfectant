@@ -7,6 +7,13 @@ use `update.bat` to run the updater and install eek. use the interactive menu to
 use `eek.bat` to run eek
 
 ---
+
+### Resources
+- wget 1.19.4 (32 bit) from https://eternallybored.org/misc/wget/
+  - this is the last version that supports Windows XP
+- 7-Zip 19.00 (32 bit) (2019-02-21) from https://www.7-zip.org/download.html
+
+---
 old notes...
 
 Download EmsisoftEmergencyKit from https://www.emsisoft.com/en/home/emergencykit/
