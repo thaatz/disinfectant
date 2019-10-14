@@ -1,7 +1,9 @@
 @echo off
+pushd %~dp0 2>NUL
 :: http://stackoverflow.com/questions/3068929/how-to-read-file-contents-into-a-variable-in-a-batch-file
 set /p stingerbuild=<stinger.txt
 set /p kvrtbuild=<kvrt.txt
+set /p eekbuild=<eek.txt
 title Disinfectant Updater
 :main
 cls
@@ -17,10 +19,14 @@ if "%stingerbuild%"=="" (
 if "%kvrtbuild%"=="" (
 	echo  บ 2. KVRT [none]                                                            บ
 ) else echo  บ 2. KVRT [%kvrtbuild%]                                                  บ
+if "%eekbuild%"=="" (
+	echo  บ 3. EEK [none]                                                             บ
+) else echo  บ 3. EEK [%eekbuild%]						     บ
 echo  ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
 set /p exs=Make selection: 
 if /i "%exs%"=="1" goto :updstinger
 if /i "%exs%"=="2" goto :updkvrt
+if /i "%exs%"=="3" goto :updeek
 :: needed to add quotes for syntax in windows 8+
 :: http://stackoverflow.com/questions/19308159/batch-simply-syntax-error-goto-was-unexpected-at-this-time
 goto :main
@@ -40,6 +46,41 @@ echo.
 :: -N If the local file is newer, the remote file will not be re-fetched http://www.editcorp.com/personal/lars_appel/wget/wget_5.html#SEC23
 bin\wget.exe -N http://devbuilds.kaspersky-labs.com/devbuilds/KVRT/latest/full/KVRT.exe
 echo %date%>kvrt.txt
+:: wait for 2 seconds so we can see the results
+ping localhost -n 3 >nul
+goto :EOF
+
+:updeek
+echo.
+:: -N If the local file is newer, the remote file will not be re-fetched http://www.editcorp.com/personal/lars_appel/wget/wget_5.html#SEC23
+:: first get the home page to read the version
+echo check for updates . . .
+echo.
+bin\wget.exe https://www.emsisoft.com/en/home/emergencykit/
+::http://stackoverflow.com/questions/22198458/find-text-in-file-and-set-it-as-a-variable-batch-file
+REM for /F "delims=" %%a in ('findstr "&mdash; Released:" index.html') do set new_link=%%a
+for /F "delims=" %%a in ('findstr "Released" index.html') do set "eek_ver=%%a"
+del index.html
+:: just get the section right after Version:
+set eek_ver=%eek_ver:~8,15%
+:: remove the & sign in case we capture that as well https://www.dostips.com/DtTipsStringManipulation.php#Snippets.Replace
+set eek_ver=%eek_ver:&=%
+:: also remove spaces
+set eek_ver=%eek_ver: =%
+echo %eek_ver%>eek.txt
+
+if %eek_ver%==%eekbuild% (
+	echo.
+	echo %eek_ver%
+	echo no update detected
+	pause
+	goto :EOF
+)
+
+:: now start the actual download
+bin\wget.exe -N https://dl.emsisoft.com/EmsisoftEmergencyKit.exe
+REM 7zip stuff here
+
 :: wait for 2 seconds so we can see the results
 ping localhost -n 3 >nul
 goto :EOF

@@ -8,6 +8,8 @@ kvrt.txt
 test/
 
 #Emsisoft Emergency Kit and the whitelist file
+EmsisoftEmergencyKit.exe
+eek.txt
 EmsisoftEmergencyKit
 whitelist.txt
 

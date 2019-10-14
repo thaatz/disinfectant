@@ -2,7 +2,7 @@
 pushd %~dp0 2>NUL
 REM Download EmsisoftEmergencyKit from https://www.emsisoft.com/en/home/emergencykit/
 :: SCANONLY, 1 for scan only, no d
-scanonly=1
+set scanonly=1
 set quarantinesetting= 
 if %scanonly%==0 set quarantinesetting=/quarantine=%cd%\Quarantine
 
