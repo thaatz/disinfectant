@@ -69,7 +69,7 @@ set eek_ver=%eek_ver:&=%
 set eek_ver=%eek_ver: =%
 echo %eek_ver%>eek.txt
 
-if %eek_ver%==%eekbuild% (
+if "%eek_ver%"=="%eekbuild%" (
 	echo.
 	echo %eek_ver%
 	echo no update detected
@@ -80,6 +80,7 @@ if %eek_ver%==%eekbuild% (
 :: now start the actual download
 bin\wget.exe -N https://dl.emsisoft.com/EmsisoftEmergencyKit.exe
 REM 7zip stuff here
+bin\7z x -o"EmsisoftEmergencyKit.exe" -y "EmsisoftEmergencyKit"
 
 :: wait for 2 seconds so we can see the results
 ping localhost -n 3 >nul
