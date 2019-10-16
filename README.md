@@ -6,6 +6,11 @@ use `update.bat` to run the updater and install eek. use the interactive menu to
 
 use `eek.bat` to run eek
 
+## Stinger
+requires .NET Framework 3.5
+
+TODO: compare to https://github.com/bmrf/tron/blob/master/resources/stage_0_prep/stage_0_prep.bat
+
 ---
 
 ### Resources
