@@ -1,5 +1,5 @@
 @echo off
-pushd %~dp0 2>NUL
+pushd "%~dp0" 2>NUL
 :: http://stackoverflow.com/questions/3068929/how-to-read-file-contents-into-a-variable-in-a-batch-file
 set /p stingerbuild=<stinger.txt
 set /p kvrtbuild=<kvrt.txt
@@ -80,7 +80,7 @@ if "%eek_ver%"=="%eekbuild%" (
 :: now start the actual download
 bin\wget.exe -N https://dl.emsisoft.com/EmsisoftEmergencyKit.exe
 REM 7zip stuff here
-bin\7z x -o"EmsisoftEmergencyKit.exe" -y "EmsisoftEmergencyKit"
+bin\7z x -o"EmsisoftEmergencyKit" -y "EmsisoftEmergencyKit.exe"
 
 :: wait for 2 seconds so we can see the results
 ping localhost -n 3 >nul
