@@ -1,10 +1,9 @@
 # Disinfectant
 
 ## Emsisoft Emergency Kit
-
-use `update.bat` to run the updater and install eek. use the interactive menu to pick Emsisoft Emergency Kit
-
-use `eek.bat` to run eek
+- use `update.bat` to run the updater and install eek. use the interactive menu to pick Emsisoft Emergency Kit
+- use `eek.bat` to run eek
+- using `eek.bat` will also update EEK to the latest version before running a scan, but you can also use `update.bat` to force an update and reinstallation of EEK if a need be
 
 ## Stinger
 requires .NET Framework 3.5
