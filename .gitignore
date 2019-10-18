@@ -12,6 +12,7 @@ EmsisoftEmergencyKit.exe
 eek.txt
 EmsisoftEmergencyKit
 whitelist.txt
+Logs/
 
 # Windows image file caches
 Thumbs.db
